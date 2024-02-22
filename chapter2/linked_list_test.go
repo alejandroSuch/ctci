@@ -96,3 +96,14 @@ func newLinkedList[T any](inputs []T) *Node[T] {
 
 	return result
 }
+
+func toList[T any](n *Node[T]) []T {
+	var result []T
+
+	for n != nil {
+		result = append(result, n.Data)
+		n = n.Next
+	}
+
+	return result
+}
